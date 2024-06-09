@@ -1,5 +1,5 @@
 from backtesting import Backtest
-from backtesting.test import GOOG
+from backtesting.test import GOOG,AUDJPY
 from backtesting import Strategy
 from backtesting.lib import crossover
 import pandas as pd
@@ -36,7 +36,7 @@ class SmaCross(Strategy):
         elif crossover(self.sma2, self.sma1):
             self.position.close()
             self.sell()
-bt = Backtest(GOOG, SmaCross, cash=10_000, commission=.002)#SmaCross works with GOOG as a data(by me)-SmCross is like alogrithm(strategy)given to Backtest to plot it
+bt = Backtest(AUDJPY, SmaCross, cash=10_000, commission=.002)#SmaCross works with GOOG as a data(by me)-SmCross is like alogrithm(strategy)given to Backtest to plot it
 stats = bt.run()
 print(stats)
 bt.plot()

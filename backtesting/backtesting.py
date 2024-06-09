@@ -810,6 +810,7 @@ class _Broker:
                 self._close_trade(trade, self._data.Close[-1], i)
             self._cash = 0
             self._equity[i:] = 0
+            print("Out of your money bitch")
             raise _OutOfMoneyError
 
     def _process_orders(self):
