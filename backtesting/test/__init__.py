@@ -16,7 +16,7 @@ GOOG = _read_file('GOOG.csv')
 EURUSD = _read_file('EURUSD.csv')
 """DataFrame of hourly EUR/USD forex data from April 2017 to February 2018."""
 
-AUDJPY = _read_file('AUDJPY.csv')
+
 def csvconverter(fname):
     print(fname)
     f=pd.read_csv(fname)
@@ -27,7 +27,6 @@ def csvconverter(fname):
     new_f['t'] = new_f['t'].dt.strftime('%H:%M:%S')
     new_f.to_csv(f"new_{fname}.csv", index=False)
         
-csvconverter('AUDJPY.csv')
 def SMA(arr: pd.Series, n: int) -> pd.Series:
     """
     Returns `n`-period simple moving average of array `arr`.
